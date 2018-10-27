@@ -47,10 +47,37 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 echo -e "\n**** Preparing the environment ****\n"
 sudo apt-get -y install maven
 sudo apt-get -y install gedit
+sudo apt-get -y install xclip
 
-mkdir code
-cd code
-git clone https://github.com/WeIgniteTech/the-weignitetech-program.git  
+echo -e "\n**** Adding som functionality to start-up script ****\n"
+cat <<EOL >> ~/.zshrc
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add;
+}
+
+# Source SSH settings, if applicable
+
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
+EOL
+
+mkdir Code
+echo -e "\n**** Copy Hello.txt to Desktop ****\n"
+wget -O /home/vagrant/Desktop/Hello.txt  https://raw.githubusercontent.com/WeIgniteTech/dev-environment/master/Hello.txt
 
 
 echo -e "\n**** \n**** Installation is done!!!\n**** \n"
