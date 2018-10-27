@@ -1,10 +1,13 @@
 #!/bin/bash
+YOUR_NAME="Firstname Lastname"
+YOUR_EMAIL="email_you_use_for_github@example.com"
 
 echo -e "\n**** Lagre en  .gitconfig inn i VM ****\n"
+
 cat <<EOL >> ~/.gitconfig
 [user]
-  name = YOUR_NAME_HERE
-  email = your.mail@he.re
+  name = $YOUR_NAME
+  email = $YOUR_EMAIL
 [color]
   diff = auto
   status = auto
@@ -49,6 +52,10 @@ sudo apt-get -y install maven
 sudo apt-get -y install gedit
 sudo apt-get -y install xclip
 
+echo -e "\n**** Setting up your ssh key with an empty passphrase (OBS: You can set a passphrase later) ****\n"
+yes y | ssh-keygen -t rsa -b 4096 -C "$YOUR_EMAIL" -N "" -f /home/vagrant/.ssh/id_rsa -q >/dev/null
+ssh-add ~/.ssh/id_rsa
+
 echo -e "\n**** Adding som functionality to start-up script ****\n"
 cat <<EOL >> ~/.zshrc
 SSH_ENV="$HOME/.ssh/environment"
@@ -75,7 +82,9 @@ else
 fi
 EOL
 
+echo -e "\n**** Creating the folder 'Code' where you will write your code ****\n"
 mkdir Code
+
 echo -e "\n**** Copy Hello.txt to Desktop ****\n"
 wget -O /home/vagrant/Desktop/Hello.txt  https://raw.githubusercontent.com/WeIgniteTech/dev-environment/master/Hello.txt
 

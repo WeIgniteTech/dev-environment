@@ -31,3 +31,6 @@ Installed software on the VM:
  * Gedit
  * cUrl 
 
+## Important
+> This environment is dedicated to the program and should be not used 'as is' for writing production code (mainly because off SSH settings for GitHub). Keep in mind that this environment is not permanent and will eventually be destroyed. 
+
