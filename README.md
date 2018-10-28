@@ -1,8 +1,11 @@
 # Dev environment
+> Practical *HowTo* for creating a Vagrant/VirtualBox based development environment. 
 
-Vagrant/VirtualBox base development environment. 
+## Important
+> This environment is dedicated to the program and *should not be used 'as is' for writing production code* (mainly because off SSH settings for GitHub). Keep in mind that this environment is not permanent and will eventually be destroyed. 
 
 ## HowTo
+
 ### Install some software on your PC
 > First you have to download and install the following software on your machine
   * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (version > 5.2.18)
@@ -49,7 +52,4 @@ Installed software on the VM:
  * cUrl 
  * Visual Studio Code
  * Jetbrains toolbox (easy install IntelliJ - later)
-
-## Important
-> This environment is dedicated to the program and *should not be used 'as is' for writing production code* (mainly because off SSH settings for GitHub). Keep in mind that this environment is not permanent and will eventually be destroyed. 
 
