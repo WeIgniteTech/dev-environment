@@ -1,8 +1,10 @@
-# Update me!!!
-#--------------
-YOUR_NAME = "yourname_here"
-HARDWARE_CPUS = 2
-HARDWARE_RAM = 2048
+# Please setup these variables before starting!
+#----------------------------------------------
+YOUR_NAME = "your_name_here" # example: "mike"
+YOUR_USERNAME_ON_GITHUB = "your_username_on_GITHUB" # example: "mike2"
+YOUR_EMAIL_ON_GITHUB = "your_email_on_GITHUB" # example: "mike.dough@example.com"
+HARDWARE_CPUS = 2 # If your system has 4 CPUs, use '1' otherwise
+HARDWARE_RAM = 2048 # If your system has at least 4Gb, use '1024' otherwise
 #---------------------------------
 HARDWARE_DISK = "30GB"
 HARDWARE_VRAM = "128"
@@ -63,7 +65,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :reload
 
-  config.vm.provision :shell, path: File.join( "provision", "provision-as-vagrant-user.sh" ), :privileged => false
+  config.vm.provision :shell, path: File.join( "provision", "provision-as-vagrant-user.sh" ), 
+    :args => [YOUR_USERNAME_ON_GITHUB, YOUR_EMAIL_ON_GITHUB], 
+    :privileged => false
 
   config.vm.provision :reload
 

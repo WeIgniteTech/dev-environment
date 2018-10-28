@@ -1,8 +1,10 @@
 #!/bin/bash
-YOUR_NAME="Firstname Lastname"
-YOUR_EMAIL="email_you_use_for_github@example.com"
+echo -e "\n**** Starting provisioning of the developer environment ****\n"
+YOUR_NAME=$1
+YOUR_EMAIL=$2
 
 echo -e "\n**** Lagre en  .gitconfig inn i VM ****\n"
+echo -e "\n With following arguments, username:$YOUR_NAME and email:$YOUR_EMAIL\n"
 
 cat <<EOL >> ~/.gitconfig
 [user]
@@ -84,8 +86,8 @@ EOL
 echo -e "\n \n"
 echo -e "\n**** Download and install IDEs ****\n"
 echo -e "\n  Visual Studio Code \n"
-sudo apt --fix-broken install
-sudo apt-get install libgconf-2-4
+sudo apt --fix-broken install -y
+sudo apt-get -y install libgconf-2-4
 cd Downloads
 wget -q -O code_1.28.2_amd64.deb https://go.microsoft.com/fwlink/\?LinkID\=760868
 ls code_*_amd64.deb 

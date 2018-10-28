@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo -e "\n**** Starting provisioning of a Linux Lubuntu VM ****\n"
 # Denne filen inneholder alt software vi trenger til kurs
 # Java
 # Google Chrome
@@ -46,7 +47,7 @@ apt-get update
 apt-get install -y google-chrome-stable
 sed -i 's/google\-chrome\-stable/google\-chrome\-stable \-\-disable-gpu/g' /usr/share/applications/google-chrome.desktop
 
-echo -e "\n**** Installing build-essentials, Git and npm (might take several minutes ...)"
+echo -e "\n**** Installing build-essentials, Git and npm (can take up to 5-10 minutes ...)"
 # Install lightdm, build-essential, git, npm and unity-tweak-tool
 apt-get -qq -y install lightdm build-essential git-core git npm unity-tweak-tool >/dev/null
 
@@ -67,7 +68,7 @@ user-session=ubuntu-2d
 greeter-session=unity-greeter
 EOF
 
-echo -e "\n**** A bit of cleanup and we are soon finished ..."
+echo -e "\n**** A bit of cleanup and we are finished with this first step (restart of the VM will happen soon)"
 sudo invoke-rc.d apparmor stop
 sudo update-rc.d -f apparmor remove
 
