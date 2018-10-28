@@ -107,14 +107,6 @@ echo -e "\n**** Copy Hello.txt to Desktop ****\n"
 wget -O /home/vagrant/Desktop/Hello.txt  https://raw.githubusercontent.com/WeIgniteTech/dev-environment/master/Hello.txt
 
 
-echo -e "\n**** \n**** Installation is done!!!\n**** \n"
+echo -e "\n**** \n**** Installation completed\n**** \n"
 echo -e "\n\n"
 echo -e "\n\n"
-echo -e "\n Things todo in the Guest VM:\n"
-echo -e " - Check keyboard mapping\n"
-echo -e "  you might need to run the following command in the Guest VM to ajust keyboard mapping: \n"
-echo -e "    sudo dpkg-reconfigure keyboard-configuration \n"
-echo -e "\n"
-echo -e " - Open web-browser from the task bar and make Chrome your default browser\n"
-
-

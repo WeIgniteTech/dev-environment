@@ -29,7 +29,7 @@ Test the install:
  * Check keyboard mapping. You might need to run the following command in the Guest VM to ajust keyboard mapping:
    `sudo dpkg-reconfigure keyboard-configuration`
  * Open web-browser from the task bar and make Chrome your default browser
- * Add your public SSH key to GitHub: 
+ * Add your public SSH key to GitHub:
    `xclip` is already installed on your VM. Just run:
    `xclip -sel clip < ~/.ssh/id_rsa.pub` (this will copy the key in your clipboard)
    And follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/#platform-linux) *from step 2* 

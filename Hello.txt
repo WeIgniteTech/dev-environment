@@ -1,7 +1,7 @@
 Welcome to the We Ignite Tech Program's Guest VM!
 
 To complete the installation of your developer environment, please go to this page and proceed to the last steps: 
-https://github.com/WeIgniteTech/dev-environment/blob/master/README.md
+https://github.com/WeIgniteTech/dev-environment/blob/master/README.md#make-the-vm-ready-to-use-with-a-few-manual-steps
 
 The full program is available here: 
 https://github.com/WeIgniteTech/the-weignitetech-program 
