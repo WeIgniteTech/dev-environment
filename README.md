@@ -16,11 +16,13 @@ Test the install:
 > After the install of `VirtualBox` and `Vagrant` is complete, you can use `Vagrant` to install a fully provisioned VM 
  * Download this repository as a zip file.
    click on the green `Clone or Downoload` button and choose `Download ZIP` as explained [here](https://stackoverflow.com/questions/2751227/how-to-download-source-in-zip-format-from-github)
- * On your machine, unzip the downloaded file `dev-environment-master.zip` in a convenient folder of your choice (`C:\Users\myself\wit\` for example, the name is not important) 
- * *IMPORTANT*: Update the `Vagrantfile` with your GitHub username, the email address you have registered on GitHub, the number of cpus and and amount of RAM you can give to the virtual machine. Save the file `Vagrantfile`. 
+ * On your machine, unzip the downloaded file `dev-environment-master.zip` in a convenient folder of your choice (`C:\Users\myself\wit\` for example, the name and the location of the folder does not matter) 
+ * **IMPORTANT**: You need to open the `Vagrantfile` with a text editor and provide your GitHub username, the email address you have registered on GitHub, the number of cpus and and amount of RAM you can give to the virtual machine. Then save the file `Vagrantfile`. 
  * Open a `console` and navigate to the same folder, where the `Vagrantfile` is.
- * then run `vagrant up` ... this should take a few minutes.
- * In `VirtualBox` you can `See` (opens as new window), `stop` and `start` the VM. Enjoy!
+ * then run `vagrant up` ... this will take a few minutes.
+
+### Use VirtualBox to access your VM
+ > In `VirtualBox`, just after provisioning you can press the `see` button (opens as new window). You can `stop` and `start` the VM at any time from `VirtualBox`.
 
 ### Make the VM ready to use with a few manual steps
 > You need to go through these few manual steps to complete the install
@@ -28,9 +30,10 @@ Test the install:
    `sudo dpkg-reconfigure keyboard-configuration`
  * Open web-browser from the task bar and make Chrome your default browser
  * Add your public SSH key to GitHub: 
-   `xclip` is already installed on your VM. Just run `xclip -sel clip < ~/.ssh/id_rsa.pub` (this will copy the key in your clipboard)
-   Follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/#platform-linux) *from step 2* 
- * You can test your SSH connection to GitHub like [this](https://help.github.com/articles/testing-your-ssh-connection/) *from step 1* (no need to follow other links)
+   `xclip` is already installed on your VM. Just run:
+   `xclip -sel clip < ~/.ssh/id_rsa.pub` (this will copy the key in your clipboard)
+   And follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/#platform-linux) *from step 2* 
+ * You can test your SSH connection to GitHub like [this](https://help.github.com/articles/testing-your-ssh-connection/), *from step 1* (no need to follow other links)
 
 
 ## Under the hood
