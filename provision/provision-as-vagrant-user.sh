@@ -104,7 +104,7 @@ echo -e "\n**** Creating the folder 'Code' where you will write your code ****\n
 mkdir Code
 
 echo -e "\n**** Copy Hello.txt to Desktop ****\n"
-wget -O /home/vagrant/Desktop/Hello.txt  https://raw.githubusercontent.com/WeIgniteTech/dev-environment/master/Hello.txt
+wget -q -O /home/vagrant/Desktop/Hello.txt  https://raw.githubusercontent.com/WeIgniteTech/dev-environment/master/Hello.txt
 
 
 echo -e "\n**** \n**** Installation completed\n**** \n"
