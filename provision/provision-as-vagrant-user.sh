@@ -81,6 +81,22 @@ else
     start_agent;
 fi
 EOL
+echo -e "\n \n"
+echo -e "\n**** Download and install IDEs ****\n"
+echo -e "\n  Visual Studio Code \n"
+sudo apt --fix-broken install
+sudo apt-get install libgconf-2-4
+cd Downloads
+wget -q -O code_1.28.2_amd64.deb https://go.microsoft.com/fwlink/\?LinkID\=760868
+ls code_*_amd64.deb 
+sudo dpkg -i code_1.28.2_amd64.deb 
+echo -e "\n  Jetbrains toolbox (IntelliJ and WebStorm) \n"
+wget -q -O jetbrains-toolbox-1.11.4269.tar.gz https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.11.4269.tar.gz
+ls jetbrains-toolbox-*.tar.gz 
+sudo tar -xvzf jetbrains-toolbox-1.11.4269.tar.gz -C /home/vagrant/
+
+## Back to home folder
+cd /home/vagrant
 
 echo -e "\n**** Creating the folder 'Code' where you will write your code ****\n"
 mkdir Code
