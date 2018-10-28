@@ -5,8 +5,8 @@ Vagrant/VirtualBox base development environment.
 ## HowTo
 ### Install some software on your PC
 > First you have to download and install the following software on your machine
- * [VirtualBox](https://www.vagrantup.com/downloads.html)  (version > 2.1.5) 
- * [Vagrant](https://www.virtualbox.org/wiki/Downloads)  (version > 5.2.18) 
+  * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) (version > 5.2.18)
+  * [Vagrant](https://www.vagrantup.com/downloads.html) (version > 2.1.5)
 
 Test the install: 
  * Open a `console` and run `vagrant -v`. You should see something like: `Vagrant 2.1.5`
