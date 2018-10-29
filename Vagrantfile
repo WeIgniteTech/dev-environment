@@ -12,6 +12,20 @@ HARDWARE_3D_ACCELLERATION = "on"
 #---------------------------------
 VAGRANTFILE_API_VERSION = "2"
 
+if ARGV[0] == "up" then
+  has_installed_plugins = false
+
+  unless Vagrant.has_plugin?("vagrant-reload")
+    system("vagrant plugin install vagrant-reload")
+    has_installed_plugins = true
+  end
+
+  if has_installed_plugins then
+    puts "Vagrant plugins were installed. Please run 'vagrant up' again to install the VM"
+    exit
+  end
+end
+
 
 vagrant_dir = File.expand_path(File.dirname(__FILE__))
 
@@ -40,6 +54,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     vb.customize ["modifyvm", :id, "--memory", HARDWARE_RAM]
     vb.customize ["modifyvm", :id, "--cpus", HARDWARE_CPUS, "--pae", "on"]
+
+    # Disable AUDIO and the USB 2.0 port
+    vb.customize ["modifyvm", :id, "--audio", "none", "--usb", "on", "--usbehci", "off"]
 
     # Set Northbridge
     vb.customize ["modifyvm", :id, "--chipset", "ich9"]
