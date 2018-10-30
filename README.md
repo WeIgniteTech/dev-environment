@@ -38,6 +38,11 @@ Test the install:
    And follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/#platform-linux) *from step 2* 
  * You can test your SSH connection to GitHub like [this](https://help.github.com/articles/testing-your-ssh-connection/), *from step 1* (no need to follow other links)
 
+## Daily use
+### Troubleshouting 
+ * A`System program problem detected` window pops up in the host, just after starting the VM. 
+   It happens that the `display manager` crashes (while resizing the window or switch to full screen). Ubuntu informs the user by prompting a modal window indicating `System program problem detected`. 
+   Solution: Haven't found yet how to avoid `LigthDM` to crash, but you can get rid of the info message. Run following command: `sudo rm -rf /var/crash/*`
 
 ## Under the hood
 > Our `lubuntu 18.04` box is hosted on [Vagrant Cloud](https://app.vagrantup.com/weignitetech) 
