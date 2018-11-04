@@ -24,6 +24,13 @@ Test the install:
  * Open a `console` and navigate to the same folder, where the `Vagrantfile` is.
  * then run `vagrant up` ... this will take a few minutes.
 
+### Fine tuning (VM's settings in VirtualBox)
+ > You can adjust some of the VM's setting in VirtualBox without updating the `Vagrantfile`
+The `Vagrantfile` defines a VM with 2 cores and 2048 Mb of RAM by default. But once your VM is created you can change these settings as long as the VM i stopped (shut down). Be carefull to set values that won't compromise the host machine. 
+The following settings can be modified like this: select your VM, then press `Settings` > `System` > then: 
+ * `Motherboard` if you want to allocate more RAM (drag the cursor and stop before the red zone) 
+ * `Processor` if you want to use more available cores. Use the cursor to give more cores to the VM
+
 ### Use VirtualBox to access your VM
  > In `VirtualBox`, just after provisioning you can press the `see` button (opens as new window). You can `stop` and `start` the VM at any time from `VirtualBox`.
 
