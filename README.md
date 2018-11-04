@@ -27,8 +27,8 @@ Test the install:
 ### Fine tuning (VM's settings in VirtualBox)
  > You can adjust some of the VM's setting in VirtualBox without updating the `Vagrantfile`
 
-The `Vagrantfile` defines a VM with 2 cores and 2048 Mb of RAM by default. But once your VM is created you can change these settings as long as the VM i stopped (shut down). Be carefull to set values that won't compromise the host machine. 
-The following settings can be modified like this: select your VM, then press `Settings` > `System` > then: 
+The `Vagrantfile` defines a VM with 2 cores and 2048 Mb of RAM by default. But once your VM is created you can change these settings as long as the VM is stopped (shut down). Be carefull to set values that won't compromise the host machine. 
+The following settings can be modified like this: open `VirtualBox`, select your VM, then press `Settings` > `System` > and: 
  * `Motherboard` if you want to allocate more RAM (drag the cursor and stop before the red zone) 
  * `Processor` if you want to use more available cores. Use the cursor to give more cores to the VM
 
