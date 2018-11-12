@@ -58,7 +58,8 @@ The following settings can be modified like this: open `VirtualBox`, select your
    Add manually those keys with `xmodmap` command. The Mac keyboard doesn't map the single-quote (aka _apostrophe_) on Linux (even after configuration with `sudo dpkg-reconfigure keyboard-configuration`)
    You have first to identify some available mappings with `xmodmap -pke` (+ eventuel `| grep 57` where `n` is the key number 57). The 5th position in the output is the mapped result of `AltGr`+`key`.
 
-   So we add the following to our `.zshrc`: 
+   So we add the following to our `.zshrc` to make the combination `AltGr`+`n` to produce `'`:
+    
    `xmodmap -e "keycode 57 = n N s N apostrophe N n"`
 
 ## Under the hood
