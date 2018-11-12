@@ -49,8 +49,17 @@ The following settings can be modified like this: open `VirtualBox`, select your
 ## Daily use
 ### Troubleshouting 
  * A`System program problem detected` window pops up in the host, just after starting the VM. 
+
    It happens that the `display manager` crashes (while resizing the window or switch to full screen). Ubuntu informs the user by prompting a modal window indicating `System program problem detected`. 
    Solution: Haven't found yet how to avoid `LigthDM` to crash, but you can get rid of the info message. Run following command: `sudo rm -rf /var/crash/*`
+
+ * Some keys don't map to the keyboard.
+
+   Add manually those keys with `xmodmap` command. The Mac keyboard doesn't map the single-quote (aka _apostrophe_) on Linux (even after configuration with `sudo dpkg-reconfigure keyboard-configuration`)
+   You have first to identify some available mappings with `xmodmap -pke` (+ eventuel `| grep 57` where `n` is the key number 57). The 5th position in the output is the mapped result of `AltGr`+`key`.
+
+   So we add the following to our `.zshrc`: 
+   `xmodmap -e "keycode 57 = n N s N apostrophe N n"`
 
 ## Under the hood
 > Our `lubuntu 18.04` box is hosted on [Vagrant Cloud](https://app.vagrantup.com/weignitetech) 
